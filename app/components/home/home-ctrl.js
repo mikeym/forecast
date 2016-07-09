@@ -9,6 +9,7 @@
         vm.massagedData;
         vm.getIconClass = IconService.getIconClass;
         vm.getMoonClass = IconService.getMoonClass;
+        vm.getWindBearingClass = IconService.getWindBearingClass;
 
         ForecastService.getDarkSkyForecastData()
             .then(function(response) {

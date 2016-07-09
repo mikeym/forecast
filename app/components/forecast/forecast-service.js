@@ -48,7 +48,7 @@
                     massaged.daily[key].precipProbability = formatPrecipitationProbibility(day.precipProbability);
                     massaged.daily[key].temperatureMin = parseInt(day.temperatureMin);
                     massaged.daily[key].temperatureMax = parseInt(day.temperatureMax);
-                    massaged.daily[key].windSpeed = day.windSpeed;
+                    massaged.daily[key].windSpeed = parseInt(day.windSpeed);
                     massaged.daily[key].windBearing = day.windBearing;
                     massaged.daily[key].moonPhase = day.moonPhase;
                 });
@@ -65,7 +65,7 @@
             if (isNaN(parsedProb)) {
                 return '...'; // no value or maybe no rain hey lucky buy a lotto ticket
             } else {
-                return (parsedProb * 100) + '%';
+                return parseInt(parsedProb * 100) + '%';
             }
         }
 

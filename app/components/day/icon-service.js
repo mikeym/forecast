@@ -10,15 +10,19 @@
                 'rain': 'wi-rain',
                 'snow': 'wi-snow',
                 'sleet': 'wi-sleet',
-                'wind': 'wi-cloudy-gusts',
+                'wind': 'wi-strong-wind',
                 'fog': 'wi-fog',
                 'cloudy': 'wi-cloudy',
                 'partly-cloudy-day': 'wi-day-cloudy',
                 'partly-cloudy-night': 'wi-night-alt-cloudy',
+                'hail': 'wi-hail',
+                'thunderstorm': 'wi-thunderstorm',
+                'tornado': 'wi-tornado',
                 'unknown': 'wi-na'
             },
             getIconClass: getIconClass,
-            getMoonClass: getMoonClass
+            getMoonClass: getMoonClass,
+            getWindBearingClass: getWindBearingClass
         };
 
         // Icon getter with an unknown returned if not found
@@ -101,6 +105,10 @@
                 }
             }
             return returnClass;
+        }
+        
+        function getWindBearingClass(forecastWindBearing) {
+            return 'wi-wind from-' + forecastWindBearing + '-deg';
         }
 
 

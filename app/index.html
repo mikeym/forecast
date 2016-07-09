@@ -14,14 +14,16 @@
 
 <body ng-app="ForecastApp">
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>Seattle Five-Day Forecast</h1>
-        </div>
-    </div>
+    <h1>Seattle Five-Day Forecast</h1>
 </div>
 
 <ng-view></ng-view>
+
+<footer class="footer">
+    <span><a href="https://developer.forecast.io/" target="_blank"><i class="wi wi-moon-alt-waning-crescent-5"></i>Dark Sky API</a></span>
+    <span><a href="https://erikflowers.github.io/weather-icons/" target="_blank"><i class="wi wi-day-cloudy"></i>Weather Icons</a></span>
+    <span><a href="https://github.com/mikeym/forecast" target="_blank"><i class="wi wi-cloud-up"></i>Github</a></span>
+</footer>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>

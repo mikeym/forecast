@@ -1,114 +1,180 @@
-<div ng-controller="HomeController as hc" class="container-fluid" ng-cloak>
-    <div class="row">
-        <div class="col-xs-12">
-            <p>Currently: {{hc.massagedData.currently.icon}}, {{hc.massagedData.currently.summary}}</p>
+<div ng-controller="HomeController as hc" class="container-fluid">
+
+    <!--
+        Using forecast.io icon to select one of the weather icons. Screen readers will receive
+        the original icon property from the forecast.
+    -->
+    <div class="row icon-row" ng-cloak>
+        <div class="col-xs-15 text-center day-0">
+            <i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[0].icon)"></i>
+            <span class="sr-only">{{hc.massagedData.daily[0].icon}}</span>
+        </div>
+        <div class="col-xs-15 text-center day-1">
+            <i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[1].icon)"></i>
+            <span class="sr-only">{{hc.massagedData.daily[1].icon}}</span>
+        </div>
+        <div class="col-xs-15 text-center day-2">
+            <i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[2].icon)"></i>
+            <span class="sr-only">{{hc.massagedData.daily[2].icon}}</span>
+        </div>
+        <div class="col-xs-15 text-center day-3">
+            <i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[3].icon)"></i>
+            <span class="sr-only">{{hc.massagedData.daily[3].icon}}</span>
+        </div>
+        <div class="col-xs-15 text-center day-4">
+            <i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[4].icon)"></i>
+            <span class="sr-only">{{hc.massagedData.daily[4].icon}}</span>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-15 text-center">
-            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[0].icon)"></i></p>
-            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[0].dayOfWeek}}</p>
+    <div class="row day-row" ng-cloak>
+        <div class="col-xs-15 text-center day-0">
+            <span class="text-uppercase day-of-week">{{hc.massagedData.daily[0].dayOfWeek}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[1].icon)"></i></p>
-            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[1].dayOfWeek}}</p>
+        <div class="col-xs-15 text-center day-1">
+            <span class="text-uppercase day-of-week">{{hc.massagedData.daily[1].dayOfWeek}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[2].icon)"></i></p>
-            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[2].dayOfWeek}}</p>
+        <div class="col-xs-15 text-center day-2">
+            <span class="text-uppercase day-of-week">{{hc.massagedData.daily[2].dayOfWeek}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[3].icon)"></i></p>
-            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[3].dayOfWeek}}</p>
+        <div class="col-xs-15 text-center day-3">
+            <span class="text-uppercase day-of-week">{{hc.massagedData.daily[3].dayOfWeek}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[4].icon)"></i></p>
-            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[4].dayOfWeek}}</p>
+        <div class="col-xs-15 text-center day-4">
+            <span class="text-uppercase day-of-week">{{hc.massagedData.daily[4].dayOfWeek}}</span>
         </div>
     </div>
 
-    <div class="row temp-row">
-        <div class="col-xs-15 text-center">
+    <div class="row temp-row" ng-cloak>
+        <div class="col-xs-15 text-center day-0 text-nowrap">
             <span>{{hc.massagedData.daily[0].temperatureMin}}<i class="wi wi-degrees"></i></span>
             <span class="pipe">|</span>
             <span>{{hc.massagedData.daily[0].temperatureMax}}<i class="wi wi-degrees"></i></span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-1 text-nowrap">
             <span>{{hc.massagedData.daily[1].temperatureMin}}<i class="wi wi-degrees"></i></span>
             <span class="pipe">|</span>
             <span>{{hc.massagedData.daily[1].temperatureMax}}<i class="wi wi-degrees"></i></span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-2 text-nowrap">
             <span>{{hc.massagedData.daily[2].temperatureMin}}<i class="wi wi-degrees"></i></span>
             <span class="pipe">|</span>
             <span>{{hc.massagedData.daily[2].temperatureMax}}<i class="wi wi-degrees"></i></span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-3 text-nowrap">
             <span>{{hc.massagedData.daily[3].temperatureMin}}<i class="wi wi-degrees"></i></span>
             <span class="pipe">|</span>
             <span>{{hc.massagedData.daily[3].temperatureMax}}<i class="wi wi-degrees"></i></span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-4 text-nowrap">
             <span>{{hc.massagedData.daily[4].temperatureMin}}<i class="wi wi-degrees"></i></span>
             <span class="pipe">|</span>
             <span>{{hc.massagedData.daily[4].temperatureMax}}<i class="wi wi-degrees"></i></span>
         </div>
     </div>
 
-    <div class="row precip-row">
-        <div class="col-xs-15 text-center">
+    <!-- Screen readers get a bit more info -->
+    <div class="row precip-row" ng-cloak>
+        <div class="col-xs-15 text-center day-0">
             <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[0].precipProbability}}</span>
+            <span class="sr-only">Precipitation chance</span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-1">
             <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[1].precipProbability}}</span>
+            <span class="sr-only">Precipitation chance</span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-2">
             <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[2].precipProbability}}</span>
+            <span class="sr-only">Precipitation chance</span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-3">
             <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[3].precipProbability}}</span>
+            <span class="sr-only">Precipitation chance</span>
         </div>
-        <div class="col-xs-15 text-center">
+        <div class="col-xs-15 text-center day-4">
             <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[4].precipProbability}}</span>
+            <span class="sr-only">Precipitation chance</span>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-15 text-center">
-            <p>{{hc.massagedData.daily[0].summary}}</p>
+    <div class="row summary-row" ng-cloak>
+        <div class="col-xs-15 text-center day-0">
+            {{hc.massagedData.daily[0].summary}}
         </div>
-        <div class="col-xs-15 text-center">
-            <p>{{hc.massagedData.daily[1].summary}}</p>
+        <div class="col-xs-15 text-center day-1">
+            {{hc.massagedData.daily[1].summary}}
         </div>
-        <div class="col-xs-15 text-center">
-            <p>{{hc.massagedData.daily[2].summary}}</p>
+        <div class="col-xs-15 text-center day-2">
+            {{hc.massagedData.daily[2].summary}}
         </div>
-        <div class="col-xs-15 text-center">
-            <p>{{hc.massagedData.daily[3].summary}}</p>
+        <div class="col-xs-15 text-center day-3">
+            {{hc.massagedData.daily[3].summary}}
         </div>
-        <div class="col-xs-15 text-center">
-            <p>{{hc.massagedData.daily[4].summary}}</p>
+        <div class="col-xs-15 text-center day-4">
+            {{hc.massagedData.daily[4].summary}}
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-15 text-center">
-            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[0].moonPhase)"></i></p>
+    <!--
+        This is a complex row that could benefit from optimization. The weather icons moon phase
+        image is selected twice based on the lunation percentage value sent in the forecast. The
+        second class selection instance is used for the screen reader after minimal tweakage. This
+        moon component could be optimized as a directive that makes a single call.
+    -->
+    <div class="row moon-row">
+        <div class="col-xs-15 text-center day-0">
+            <i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[0].moonPhase)"></i>
+            <span class="sr-only">{{hc.getMoonClass(hc.massagedData.daily[0].moonPhase).substring(3)}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[2].moonPhase)"></i></p>
+        <div class="col-xs-15 text-center day-1">
+            <i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[1].moonPhase)"></i>
+            <span class="sr-only">{{hc.getMoonClass(hc.massagedData.daily[1].moonPhase).substring(3)}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[3].moonPhase)"></i></p>
+        <div class="col-xs-15 text-center day-2">
+            <i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[2].moonPhase)"></i>
+            <span class="sr-only">{{hc.getMoonClass(hc.massagedData.daily[2].moonPhase).substring(3)}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[4].moonPhase)"></i></p>
+        <div class="col-xs-15 text-center day-3">
+            <i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[3].moonPhase)"></i>
+            <span class="sr-only">{{hc.getMoonClass(hc.massagedData.daily[3].moonPhase).substring(3)}}</span>
         </div>
-        <div class="col-xs-15 text-center">
-            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[5].moonPhase)"></i></p>
+        <div class="col-xs-15 text-center day-4">
+            <i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[4].moonPhase)"></i>
+            <span class="sr-only">{{hc.getMoonClass(hc.massagedData.daily[4].moonPhase).substring(3)}}</span>
         </div>
     </div>
+
+    <!--
+        Wind bearing is shown as a weather icon, and also repeated as text for screen readers.
+    -->
+    <div class="row wind-row">
+        <div class="col-xs-15 text-center day-0">
+            <i class="wi wind-size" ng-class="hc.getWindBearingClass(hc.massagedData.daily[0].windBearing)"></i>
+            <span class="sr-only">Wind bearing {{hc.massagedData.daily[0].windBearing}}</span>
+            {{hc.massagedData.daily[0].windSpeed}}<span>&nbsp;MPH</span>
+        </div>
+        <div class="col-xs-15 text-center day-1">
+            <i class="wi wind-size" ng-class="hc.getWindBearingClass(hc.massagedData.daily[1].windBearing)"></i>
+            <span class="sr-only">Wind bearing {{hc.massagedData.daily[1].windBearing}}</span>
+            {{hc.massagedData.daily[1].windSpeed}}<span>&nbsp;MPH</span>
+        </div>
+        <div class="col-xs-15 text-center day-2">
+            <i class="wi wind-size" ng-class="hc.getWindBearingClass(hc.massagedData.daily[3].windBearing)"></i>
+            <span class="sr-only">Wind bearing {{hc.massagedData.daily[2].windBearing}}</span>
+            {{hc.massagedData.daily[2].windSpeed}}<span>&nbsp;MPH</span>
+        </div>
+        <div class="col-xs-15 text-center day-3">
+            <i class="wi wind-size" ng-class="hc.getWindBearingClass(hc.massagedData.daily[3].windBearing)"></i>
+            <span class="sr-only">Wind bearing {{hc.massagedData.daily[3].windBearing}}</span>
+            {{hc.massagedData.daily[3].windSpeed}}<span>&nbsp;MPH</span>
+        </div>
+        <div class="col-xs-15 text-center day-4">
+            <i class="wi wind-size" ng-class="hc.getWindBearingClass(hc.massagedData.daily[4].windBearing)"></i>
+            <span class="sr-only">Wind bearing {{hc.massagedData.daily[4].windBearing}}</span>
+            {{hc.massagedData.daily[4].windSpeed}}<span>&nbsp;MPH</span>
+        </div>
+    </div>
+
 </div>
 
 <!--
