@@ -5,7 +5,7 @@
     function HomeController(ForecastService, IconService, $log) {
         var vm = this;
 
-        vm.appBlurb = 'Seattle weather for the next five days';
+        vm.today = moment().format('dddd, MMMM D, YYYY');
         vm.massagedData;
         vm.getIconClass = IconService.getIconClass;
         vm.getMoonClass = IconService.getMoonClass;
