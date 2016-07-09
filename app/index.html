@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Seattle Weather</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="common/weather-icons/css/weather-icons.css">
+    <link rel="stylesheet" href="common/weather-icons/css/weather-icons-wind.css">
+    <link rel="stylesheet" href="app.css"/>
+</head>
+
+<body ng-app="ForecastApp">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Seattle Five-Day Forecast</h1>
+        </div>
+    </div>
+</div>
+
+<ng-view></ng-view>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+
+<script src="app.js"></script>
+<script src="components/home/home-ctrl.js"></script>
+<script src="components/forecast/forecast-service.js"></script>
+<script src="components/day/icon-service.js"></script>
+</body>
+</html>

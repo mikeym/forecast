@@ -1,0 +1,92 @@
+/* CSS styles for this app */
+
+/* Let's give Bootstrap a 5-column grid */
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+
+/* Main forecast icon */
+.wi.biggest {
+    font-size: 3em;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Day of week */
+.day-of-week {
+    font-size: 1.25em;
+    margin: 0 0 0.25em 0;
+}
+
+/* Temperature & precipitaion rows */
+.temp-row,
+.precip-row {margin-bottom: 0.25em;}
+.temp-row span,
+.precip-row span {
+    font-size: 1em;
+    padding: 0 0.1em;
+}
+.temp-row span.pipe {
+    opacity: 0.25;
+    font-size: 0.8em;
+    position: relative;
+    top: -1px;
+}
+
+/* Miss Moon */
+.moon-size {font-size: 2em;}
+
+/* viewport adjustments */
+@media (min-width: 768px) {
+    .col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+
+    .wi.biggest {font-size: 4em;}
+    .day-of-week {font-size: 1.75em;}
+
+    .temp-row span,
+    .precip-row span {
+        font-size: 1.25em;
+        padding: 0 0.5em;
+    }
+
+    .temp-row span.pipe {
+        font-size: 1em;
+        top: -2px;
+    }
+
+    .moon-size {font-size: 3em;}
+
+}
+
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+
+    .wi.biggest {font-size: 5em;}
+    .day-of-week {font-size: 2em;}
+}
+
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+
+    .wi.biggest {font-size: 8em;}
+}

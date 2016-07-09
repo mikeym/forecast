@@ -1,0 +1,119 @@
+<div ng-controller="HomeController as hc" class="container-fluid" ng-cloak>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>Currently: {{hc.massagedData.currently.icon}}, {{hc.massagedData.currently.summary}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-15 text-center">
+            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[0].icon)"></i></p>
+            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[0].dayOfWeek}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[1].icon)"></i></p>
+            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[1].dayOfWeek}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[2].icon)"></i></p>
+            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[2].dayOfWeek}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[3].icon)"></i></p>
+            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[3].dayOfWeek}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi biggest" ng-class="hc.getIconClass(hc.massagedData.daily[4].icon)"></i></p>
+            <p class="text-uppercase day-of-week">{{hc.massagedData.daily[4].dayOfWeek}}</p>
+        </div>
+    </div>
+
+    <div class="row temp-row">
+        <div class="col-xs-15 text-center">
+            <span>{{hc.massagedData.daily[0].temperatureMin}}<i class="wi wi-degrees"></i></span>
+            <span class="pipe">|</span>
+            <span>{{hc.massagedData.daily[0].temperatureMax}}<i class="wi wi-degrees"></i></span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span>{{hc.massagedData.daily[1].temperatureMin}}<i class="wi wi-degrees"></i></span>
+            <span class="pipe">|</span>
+            <span>{{hc.massagedData.daily[1].temperatureMax}}<i class="wi wi-degrees"></i></span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span>{{hc.massagedData.daily[2].temperatureMin}}<i class="wi wi-degrees"></i></span>
+            <span class="pipe">|</span>
+            <span>{{hc.massagedData.daily[2].temperatureMax}}<i class="wi wi-degrees"></i></span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span>{{hc.massagedData.daily[3].temperatureMin}}<i class="wi wi-degrees"></i></span>
+            <span class="pipe">|</span>
+            <span>{{hc.massagedData.daily[3].temperatureMax}}<i class="wi wi-degrees"></i></span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span>{{hc.massagedData.daily[4].temperatureMin}}<i class="wi wi-degrees"></i></span>
+            <span class="pipe">|</span>
+            <span>{{hc.massagedData.daily[4].temperatureMax}}<i class="wi wi-degrees"></i></span>
+        </div>
+    </div>
+
+    <div class="row precip-row">
+        <div class="col-xs-15 text-center">
+            <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[0].precipProbability}}</span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[1].precipProbability}}</span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[2].precipProbability}}</span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[3].precipProbability}}</span>
+        </div>
+        <div class="col-xs-15 text-center">
+            <span><i class="wi wi-umbrella"></i> {{hc.massagedData.daily[4].precipProbability}}</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-15 text-center">
+            <p>{{hc.massagedData.daily[0].summary}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p>{{hc.massagedData.daily[1].summary}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p>{{hc.massagedData.daily[2].summary}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p>{{hc.massagedData.daily[3].summary}}</p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p>{{hc.massagedData.daily[4].summary}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-15 text-center">
+            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[0].moonPhase)"></i></p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[2].moonPhase)"></i></p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[3].moonPhase)"></i></p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[4].moonPhase)"></i></p>
+        </div>
+        <div class="col-xs-15 text-center">
+            <p><i class="wi moon-size" ng-class="hc.getMoonClass(hc.massagedData.daily[5].moonPhase)"></i></p>
+        </div>
+    </div>
+</div>
+
+<!--
+   Sample call: https://api.forecast.io/forecast/7459de8486fd25cdfcaf0aa2a3f506d1/47.6062,-122.3321
+
+   Time Machine:
+   https://api.forecast.io/forecast/7459de8486fd25cdfcaf0aa2a3f506d1/47.6062,-122.3321,2016-01-01T00:00:00
+-->
