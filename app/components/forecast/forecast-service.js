@@ -16,7 +16,7 @@
         });
 
     // Interacts with the Dark Sky Forecast API and manages the data formatting.
-    function ForecastService($http, $q, FC, $log) {
+    function ForecastService($http, $q, FC_IO) {
         var svc = {
             getDarkSkyForecastData: getDarkSkyForecastData,
             massageDarkSkyForecastData: massageDarkSkyForecastData
@@ -41,7 +41,6 @@
                     massaged.daily[key].dayOfWeek = moment.unix(day.time).format('ddd');
                     massaged.daily[key].icon = day.icon;
                     massaged.daily[key].summary = day.summary;
-                    massaged.daily[key].precipIntensity = day.precipIntensity;
                     massaged.daily[key].precipProbability = formatPrecipitationProbibility(day.precipProbability);
                     massaged.daily[key].temperatureMin = parseInt(day.temperatureMin);
                     massaged.daily[key].temperatureMax = parseInt(day.temperatureMax);
@@ -69,9 +68,9 @@
         // Asks nicely to let us know how many days in a row it's gonna rain
         function getDarkSkyForecastData() {
             var defer = $q.defer(),
-                requestUrl = FC.FORECAST_URL + FC.API_KEY + '/' +
-                             FC.SEATTLE_LATITUDE + ',' + FC.SEATTLE_LONGITUDE +
-                             FC.QUERY_PARAMS;
+                requestUrl = FC_IO.FORECAST_URL + FC_IO.API_KEY + '/' +
+                             FC_IO.SEATTLE_LATITUDE + ',' + FC_IO.SEATTLE_LONGITUDE +
+                             FC_IO.QUERY_PARAMS;
 
             $http.jsonp(requestUrl)
                 .then(function success(response) {
@@ -88,6 +87,6 @@
 
     angular
       .module('ForecastApp')
-      .service('ForecastService', ['$http', '$q', 'FC_IO', '$log', ForecastService]);
+      .service('ForecastService', ['$http', '$q', 'FC_IO', ForecastService]);
 
 })();

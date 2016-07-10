@@ -17,8 +17,11 @@ module.exports = function(config){
             'app/components/forecast/*.js',
             'app/components/day/icon-service.js',
 
+            // test fixtures
+            'tests/data/*.js',
+
             // unit tests
-            'tests/*.js'
+            'tests/unit/*.js'
         ],
         
         autoWatch : true,
