@@ -1,8 +1,8 @@
 {
   "name": "forecast",
-  "description": "Five day Seattle weather forecast",
+  "description": "Seattle five-day weather forecast",
   "version": "0.0.1",
-  "license": "Unlicense",
+  "license": "MIT License",
   "private": false,
   "dependencies": {
     "angular": "~1.5.7",

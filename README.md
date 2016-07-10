@@ -46,3 +46,6 @@ way.
 * I hope you're interested in the weather in Seattle, and not in say Paris. Not that
   there's anything wrong with being interested in the weather in Paris, I like Paris
   a lot, that's just not what this app does.
+
+## License
+This project is licensed under the terms of the MIT license.

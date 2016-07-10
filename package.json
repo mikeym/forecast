@@ -1,9 +1,9 @@
 {
-  "name": "angular-tiny",
+  "name": "forecast",
   "private": false,
-  "version": "0.0.0",
-  "description": "A tiny starter project for AngularJS",
-  "license": "Unlicense",
+  "version": "0.0.1",
+  "description": "Seattle five-day weather forecast in Angular",
+  "license": "MIT License",
   "devDependencies": {
     "bower": "^1.3.1",
     "http-server": "^0.6.1",
