@@ -2,9 +2,11 @@
     'use strict';
 
     // Basic home screen controller with a bound property for basic sanity-checking
-    function HomeController(ForecastService, IconService, $log) {
-        var vm = this;
+    function HomeController(ForecastService, IconService, $document, $log) {
+        var vm = this,
+            loadingIndicator = angular.element($document[0].getElementById('loading'));
 
+        showLoading(true);
         vm.today = moment().format('dddd, MMMM D, YYYY');
         vm.massagedData;
         vm.getIconClass = IconService.getIconClass;
@@ -16,11 +18,24 @@
                 vm.massagedData = ForecastService.massageDarkSkyForecastData(response);
             },
             function(response) {
-                $log.debug('Error getting Dark Sky data, response: ' + response.status);
+                vm.massagedData = {
+                    error: 'Error getting Dark Sky data, response: ' + response.status
+                };
+            })
+            .finally(function() {
+                showLoading(false);
             });
+
+        // This should be a directive monitoring an event on rootScope but low on time and
+        // want to write some tests. If true, shows the loading spinner, if false, hides it.
+        function showLoading(showIt) {
+            var classToAdd = showIt ? 'show' : 'hidden';
+            loadingIndicator.removeClass('show hidden');
+            loadingIndicator.addClass(classToAdd);
+        }
     }
     
     angular
         .module('ForecastApp')
-        .controller('HomeController', ['ForecastService', 'IconService', '$log', HomeController]);
+        .controller('HomeController', ['ForecastService', 'IconService', '$document', '$log', HomeController]);
 })();

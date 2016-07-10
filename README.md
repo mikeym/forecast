@@ -3,7 +3,8 @@
 This is a small Angular project that displays a five-day weather forecast for Seattle.
 Weather data is courtesy of the [Dark Sky API](https://developer.forecast.io/). The
 weather icons are courtesy of [Weather Icons](https://erikflowers.github.io/weather-icons/).
-Other deployed technologies include [Bootstrap](http://getbootstrap.com/) for layout and
+Other deployed technologies include [Bootstrap](http://getbootstrap.com/) for layout,
+[Font Awesome](http://fontawesome.io/) for the loading and GitHub icons, and
 [Moment.js](http://momentjs.com/) for a couple of time operations.
 
 Testing technologies include [Karma](https://karma-runner.github.io/1.0/index.html) and

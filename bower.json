@@ -1,7 +1,7 @@
 {
-  "name": "angular-tiny",
-  "description": "A tiny starter project for AngularJS",
-  "version": "0.0.0",
+  "name": "forecast",
+  "description": "Five day Seattle weather forecast",
+  "version": "0.0.1",
   "license": "Unlicense",
   "private": false,
   "dependencies": {

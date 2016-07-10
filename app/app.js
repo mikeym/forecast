@@ -6,6 +6,8 @@
             'ngRoute',
             'ngAnimate'
         ])
+
+        // Just the one view in this app
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.when('/home', {
                 templateUrl: 'components/home/home-view.html',
@@ -15,5 +17,5 @@
             .otherwise({
                 redirectTo: '/home'
             });
-        }]);
+        }])
 })();

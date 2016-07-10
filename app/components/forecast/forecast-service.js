@@ -26,19 +26,16 @@
         function massageDarkSkyForecastData(response) {
             var dailyData,
                 massaged = {
-                    currently: { },
                     daily: [ ],
                     error: null
                 };
 
             if (response && response.data && response.data.daily && response.data.daily.data) {
 
-                massaged.currently.icon = response.data.currently.icon;
-                massaged.currently.summary = response.data.currently.summary;
-
                 dailyData = response.data.daily.data;
 
                 // Loop through each day and process just the stuff we're interested in.
+                // Some of these properties would benefit from safety checks.
                 angular.forEach(dailyData, function(day, key) {
                     massaged.daily[key] = { };
                     massaged.daily[key].dayOfWeek = moment.unix(day.time).format('ddd');

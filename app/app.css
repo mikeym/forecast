@@ -45,6 +45,16 @@ p.subheader {
     opacity: 0.7;
 }
 
+/* loading indicator */
+#loading {
+    display: block;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 2;
+    opacity: 0.8;
+}
+
 /* Sticky footer styles */
 .footer {
     position: absolute;
@@ -111,17 +121,24 @@ p.subheader {
 }
 
 /* Summary row would like a little personal space */
-.summary-row {margin: 1em 0.05em 1.25em 0.05em;}
+.summary-row {margin: 1em 0.05em;}
 
 /* Miss Moon and Mister Wind */
 .moon-row {margin-bottom: 0.5em;}
-.moon-size {font-size: 3em;}
+.moon-size {font-size: 2.5em;}
 
 .wind-row span {font-size: 0.8em;}
 .wind-size {
     font-size: 2em;
     margin-left: 0.05em;
 }
+
+/* messages if any */
+.message-row {
+    margin-top: 5em;
+    opacity: 0.7;
+}
+.message-row i {font-size: 2em;}
 
 /* viewport adjustments */
 @media (min-width: 768px) {
@@ -144,7 +161,7 @@ p.subheader {
         top: -2px;
     }
 
-    .moon-size {font-size: 4em;}
+    .moon-size {font-size: 3.5em;}
     .wind-size {font-size: 3em;}
 
 }
@@ -163,7 +180,7 @@ p.subheader {
         font-size: 1.5em;
     }
 
-    .moon-size {font-size: 5em;}
+    .moon-size {font-size: 4.5em;}
     .wind-size {font-size: 4em;}
 
 }
