@@ -113,7 +113,7 @@ describe('ForecastService tests', function() {
         expect(massaged.daily[2].icon).toEqual('rain');
         expect(massaged.daily[3].icon).toEqual('rain');
         expect(massaged.daily[4].icon).toEqual('rain');
-        expect(massaged.daily[5].icon).toEqual('rain');
+        expect(massaged.daily[5].icon).toEqual('rain'); // lol typical
         expect(massaged.daily[6].icon).toEqual('partly-cloudy-day');
     });
 

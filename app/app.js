@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    // Create our TinyApp angular module
+    // Main application startup basically just routes to our home view.
     angular.module('ForecastApp', [
             'ngRoute',
             'ngAnimate'

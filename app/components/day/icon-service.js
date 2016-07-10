@@ -1,6 +1,12 @@
 (function() {
     'use strict';
 
+    // Provides weather icons class names for specific data returned by forecast.io.
+    // Mostly these functions are called from ng-class in the template, which was quick
+    // to do, but is expensive in performance. A better production solution would be to
+    // develop a more robust data model that included the class names and data formatting,
+    // and to handle that after the Dark Sky server call. Then the view could work quickly
+    // with bound data. Most of these functions would still work for that architecture.
     function IconService() {
         var svc = {
             // Lookup for the weather icon to be associated with the Dark Sky icon property
@@ -106,7 +112,11 @@
             }
             return returnClass;
         }
-        
+
+        // Ok the weather icons guys were super overachievers here. There are two different
+        // sets of wind bearing icons, each with 360 different images, one per degree. So our
+        // wind bearing icon-picker just has to make sure we've been sent an actual valid degree,
+        // and then get us the right icon, or N/A as an alternative.
         function getWindBearingClass(forecastWindBearing) {
             var returnClass;
             if (isNaN(forecastWindBearing) || (forecastWindBearing < 0 || forecastWindBearing > 360)) {

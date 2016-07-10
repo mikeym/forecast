@@ -22,7 +22,10 @@
             massageDarkSkyForecastData: massageDarkSkyForecastData
         };
         
-        // Formats the raw forecast.io response into usable format
+        // Formats the raw forecast.io response into usable format.
+        // Returns a flat array of objects, one per each day of the forecast,
+        // containing formatted values we can display and/or use to look up a
+        // cute weather icon of some sort.
         function massageDarkSkyForecastData(response) {
             var dailyData,
                 massaged = {
@@ -55,7 +58,8 @@
             return massaged;
         }
 
-        // Takes the rain percent value returned by the API and formats it for display
+        // Takes the rain percent value returned by the API and formats it for display.
+        // So 0.36 becomes '36%'.
         function formatPrecipitationProbibility(prob) {
             var parsedProb = parseFloat(prob);
             if (isNaN(parsedProb)) {
@@ -65,7 +69,8 @@
             }
         }
 
-        // Asks nicely to let us know how many days in a row it's gonna rain
+        // Asks nicely to let us know how many days in a row it's gonna rain.
+        // Returns the result as a promise.
         function getDarkSkyForecastData() {
             var defer = $q.defer(),
                 requestUrl = FC_IO.FORECAST_URL + FC_IO.API_KEY + '/' +

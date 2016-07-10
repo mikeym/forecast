@@ -1,18 +1,27 @@
 (function () {
     'use strict';
 
-    // Basic home screen controller with a bound property for basic sanity-checking
+    // The Home Controller calls the Dark Sky server via the ForecastService.
+    // It them asks the ForecastService to format the returned data for consumption.
+    // The controller then makes this data available to the view.
     function HomeController(ForecastService, IconService, $document) {
         var vm = this,
             loadingIndicator = angular.element($document[0].getElementById('loading'));
 
+        // The loading indicator defaults to visible as the outer index.html template
+        // loads, but we do this here anyway because obsessive or something. This whole
+        // loader icon behaviour is scruffy.
         showLoading(true);
+
+        // Bound controller properties available to the view.
         vm.today = moment().format('dddd, MMMM D, YYYY');
         vm.massagedData;
         vm.getIconClass = IconService.getIconClass;
         vm.getMoonClass = IconService.getMoonClass;
         vm.getWindBearingClass = IconService.getWindBearingClass;
 
+        // Calls ForecastService on initial load only for this prototype. We'd want a
+        // refresh button or something for a production app.
         ForecastService.getDarkSkyForecastData()
             .then(function(response) {
                 vm.massagedData = ForecastService.massageDarkSkyForecastData(response);

@@ -1,4 +1,8 @@
-/* CSS styles for this app */
+/*
+    CSS styles for the forecast app, arranged vaguely top-to-bottom on the screen.
+    I'd probably prefer to do this with Sass in production to better isolate components,
+    but time was a factor and this was quickest.
+*/
 
 /* For sticky footer */
 html {
@@ -6,6 +10,7 @@ html {
     min-height: 100%;
 }
 
+/* We put a blue-gray gradient background on the body tag */
 body {
     background: rgb(40,47,61);
     background: -moz-linear-gradient(top,  rgba(40,47,61,1) 0%, rgba(83,89,107,1) 100%);
@@ -18,7 +23,7 @@ body {
     margin-bottom: 30px; /* sticky footer */
 }
 
-/* Let's give Bootstrap a 5-column grid */
+/* Let's give Bootstrap a 5-column grid, one column per day */
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
@@ -133,7 +138,7 @@ p.subheader {
     margin-left: 0.05em;
 }
 
-/* messages if any */
+/* error messages if any */
 .message-row {
     margin-top: 5em;
     opacity: 0.7;
