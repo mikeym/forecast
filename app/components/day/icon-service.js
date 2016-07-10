@@ -108,7 +108,13 @@
         }
         
         function getWindBearingClass(forecastWindBearing) {
-            return 'wi-wind from-' + forecastWindBearing + '-deg';
+            var returnClass;
+            if (isNaN(forecastWindBearing) || (forecastWindBearing < 0 || forecastWindBearing > 360)) {
+                returnClass = 'wi-na';
+            } else {
+                returnClass = 'wi-wind from-' + forecastWindBearing + '-deg';
+            }
+            return returnClass;
         }
 
 

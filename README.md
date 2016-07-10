@@ -16,6 +16,11 @@ this terminal command:
 
     npm install
 
+## Launching the application
+After running npm install and starting your webserver, open a web browser and enter the url:
+
+    http://[your webserver]/forecast/app/#/home
+
 ## Running the unit tests
 To run the unit tests, issue this terminal command:
 
