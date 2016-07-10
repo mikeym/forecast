@@ -9,11 +9,15 @@ module.exports = function(config){
             'app/bower_components/angular-route/angular-route.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/bower_components/angular-animate/angular-animate.js',
-            'app/bower_components/angular-bootstrap/ui-bootstrap.js',
+            'app/bower_components/moment/moment.js',
             
-            // application scripts and unit tests
+            // application scripts
             'app/app.js',
             'app/components/home/*.js',
+            'app/components/forecast/*.js',
+            'app/components/day/icon-service.js',
+
+            // unit tests
             'tests/*.js'
         ],
         

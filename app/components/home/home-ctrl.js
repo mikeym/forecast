@@ -2,7 +2,7 @@
     'use strict';
 
     // Basic home screen controller with a bound property for basic sanity-checking
-    function HomeController(ForecastService, IconService, $document, $log) {
+    function HomeController(ForecastService, IconService, $document) {
         var vm = this,
             loadingIndicator = angular.element($document[0].getElementById('loading'));
 
@@ -37,5 +37,5 @@
     
     angular
         .module('ForecastApp')
-        .controller('HomeController', ['ForecastService', 'IconService', '$document', '$log', HomeController]);
+        .controller('HomeController', ['ForecastService', 'IconService', '$document', HomeController]);
 })();

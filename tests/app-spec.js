@@ -1,9 +1,9 @@
 'use strict';
 
-describe('TinyApp main app configuration tests', function() {
+describe('ForecastApp main app configuration tests', function() {
     var route;
     
-    beforeEach(module('TinyApp'));
+    beforeEach(module('ForecastApp'));
     beforeEach(inject(function($route) {
         route = $route;
     }));
